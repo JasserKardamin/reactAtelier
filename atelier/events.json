@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Summer Music Festival",
+    "description": "A lively festival featuring top artists and DJs all day long.",
+    "img": "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=80",
+    "price": 50,
+    "nbTickets": 500,
+    "nbParticipants": 120,
+    "like": 320
+  },
+  {
+    "name": "Art & Wine Night",
+    "description": "Enjoy an evening of painting, wine tasting, and good company.",
+    "img": "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=80",
+    "price": 30,
+    "nbTickets": 200,
+    "nbParticipants": 80,
+    "like": 145
+  },
+  {
+    "name": "Tech Conference 2026",
+    "description": "Join innovators and tech enthusiasts for workshops and talks.",
+    "img": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+    "price": 100,
+    "nbTickets": 1000,
+    "nbParticipants": 560,
+    "like": 890
+  },
+  {
+    "name": "Outdoor Yoga Retreat",
+    "description": "Relax and rejuvenate in nature with expert instructors.",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "price": 40,
+    "nbTickets": 150,
+    "nbParticipants": 75,
+    "like": 210
+  },
+  {
+    "name": "Gourmet Food Fair",
+    "description": "Taste dishes from top chefs and discover new culinary delights.",
+    "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
+    "price": 20,
+    "nbTickets": 300,
+    "nbParticipants": 200,
+    "like": 410
+  }
+]
