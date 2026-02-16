@@ -1,11 +1,13 @@
-import { Events } from "./componets/Events";
 import "./App.css";
+import { Outlet } from "react-router-dom";
+import { NavBar } from "./componets/NavBar";
 
 function App() {
   return (
-    <div className="w-100">
-      <Events />
-    </div>
+    <>
+      <NavBar />
+      <Outlet />
+    </>
   );
 }
 

@@ -46,7 +46,7 @@ export const Events = () => {
         <Alert variant="success">Hey Welcome to Esprit Events</Alert>
       )}
 
-      <div className="d-flex flex-row gap-3">
+      <div className="d-flex flex-row gap-3 p-5">
         {events.map((item, index) => (
           <Event
             key={index}

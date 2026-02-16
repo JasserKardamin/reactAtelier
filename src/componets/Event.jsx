@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const Event = ({ title, price, numTickets, numParticipant, img }) => {
   const [EventInfo, setEventInfo] = useState({
@@ -28,27 +29,31 @@ export const Event = ({ title, price, numTickets, numParticipant, img }) => {
     <div className="card" style={{ width: "25rem" }}>
       <img src={EventInfo.img} className="card-img-top" alt="..." />
       <div className="card-body d-flex flex-column align-items-start">
-        <h5 className="card-title">Title : {EventInfo.title}</h5>
+        <Link to={`/event/${EventInfo.title}`} className="card-title">
+          Title : {EventInfo.title}
+        </Link>
         <p className="card-text">Price : {EventInfo.price}</p>
         <p className="card-text">Number of tickets :{EventInfo.numTickets}</p>
         <p className="card-text">
           Number of participants :{EventInfo.numParticipant}
         </p>
-        <button
-          disabled={!canBuy}
-          onClick={handleBuy}
-          type="button"
-          className="btn btn-primary"
-        >
-          Book an event
-        </button>
-        <button
-          onClick={() => setLike(!like)}
-          type="button"
-          className="btn btn-info"
-        >
-          {like ? "Dislike" : "Like"}
-        </button>
+        <div className="d-flex flex-row gap-3">
+          <button
+            disabled={!canBuy}
+            onClick={handleBuy}
+            type="button"
+            className="btn btn-primary"
+          >
+            Book an event
+          </button>
+          <button
+            onClick={() => setLike(!like)}
+            type="button"
+            className="btn btn-info"
+          >
+            {like ? "Dislike" : "Like"}
+          </button>
+        </div>
       </div>
     </div>
   );
