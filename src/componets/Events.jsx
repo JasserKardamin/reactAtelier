@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
-import eventsData from "../../events.json";
+import * as eventService from "../service/eventService";
 import { Event } from "./Event";
 import Alert from "react-bootstrap/Alert";
 
 export const Events = () => {
-  const [events, setEvents] = useState(eventsData);
+  const [events, setEvents] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
   const [showBienvenu, setShowBienvenu] = useState(false);
 
   // did mount
   useEffect(() => {
-    console.log("Events component mounted");
+    const fetchData = async () => {
+      const events = await eventService.fetchEvents();
+      setEvents(events);
+      console.log("Events component mounted");
+    };
+
+    fetchData();
   }, []);
 
   // did update
@@ -22,11 +28,11 @@ export const Events = () => {
   }, events);
 
   // wil umount
-  useEffect(() => {
-    return () => {
-      console.log("Events component unmounted");
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     console.log("Events component unmounted");
+  //   };
+  // }, []);
 
   const buy = () => {
     setShowAlert(true);
@@ -47,7 +53,7 @@ export const Events = () => {
       )}
 
       <div className="d-flex flex-row gap-3 p-5">
-        {events.map((item, index) => (
+        {events?.map((item, index) => (
           <Event
             key={index}
             img={item.img}

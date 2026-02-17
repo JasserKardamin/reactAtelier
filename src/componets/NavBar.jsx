@@ -17,6 +17,13 @@ export const NavBar = () => {
         >
           My Events
         </NavLink>
+
+        <NavLink
+          to="/event/add"
+          className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}
+        >
+          add Event
+        </NavLink>
       </div>
     </nav>
   );
