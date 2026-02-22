@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import * as eventService from "../service/eventService";
 
-export const Event = ({ title, price, numTickets, numParticipant, img }) => {
+export const Event = ({
+  id,
+  title,
+  price,
+  numTickets,
+  numParticipant,
+  img,
+  onDelete,
+}) => {
   const [EventInfo, setEventInfo] = useState({
+    id,
     title,
     price,
     numParticipant,
@@ -25,6 +35,7 @@ export const Event = ({ title, price, numTickets, numParticipant, img }) => {
       };
     });
   };
+
   return (
     <div className="card" style={{ width: "25rem" }}>
       <img src={EventInfo.img} className="card-img-top" alt="..." />
@@ -52,6 +63,13 @@ export const Event = ({ title, price, numTickets, numParticipant, img }) => {
             className="btn btn-info"
           >
             {like ? "Dislike" : "Like"}
+          </button>
+          <Link className="btn btn-primary" to={`/event/update/${id}`}>
+            Update
+          </Link>
+
+          <button className="btn btn-danger" onClick={() => onDelete(id)}>
+            Delete
           </button>
         </div>
       </div>

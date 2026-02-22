@@ -4,6 +4,7 @@ import { EventDetails } from "./componets/EventDetails";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import App from "./App";
 import { AddEvent } from "./componets/AddEvent";
+import { UpdateEvent } from "./componets/UpdateEvent";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
         element: <EventDetails />,
       },
       { path: "/event/add", element: <AddEvent /> },
+      {
+        path: "/event/update/:id",
+        element: <UpdateEvent />,
+      },
     ],
   },
   {

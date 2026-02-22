@@ -14,7 +14,7 @@ export const fetchEvents = async () => {
 
 export const createEvent = async (Event) => {
   try {
-    const { data } = await axios.Event(API_URL, Event);
+    const { data } = await axios.post(API_URL, Event);
     return data;
   } catch (error) {
     return error.response;

@@ -25,14 +25,14 @@ export const Events = () => {
     setTimeout(() => {
       setShowBienvenu(false);
     }, 3000);
-  }, events);
+  }, [events]);
 
   // wil umount
   // useEffect(() => {
   //   return () => {
   //     console.log("Events component unmounted");
   //   };
-  // }, []);
+  // }, [events]);
 
   const buy = () => {
     setShowAlert(true);
@@ -40,6 +40,12 @@ export const Events = () => {
       setShowAlert(false);
     }, 2000);
     return <Alert />;
+  };
+
+  const onDelete = (id) => {
+    const updatedEvents = events.filter((event) => event.id != id);
+    setEvents(updatedEvents);
+    eventService.deleteEvent(id);
   };
 
   return (
@@ -52,16 +58,18 @@ export const Events = () => {
         <Alert variant="success">Hey Welcome to Esprit Events</Alert>
       )}
 
-      <div className="d-flex flex-row gap-3 p-5">
+      <div className="d-flex flex-row flex-wrap gap-3 p-5">
         {events?.map((item, index) => (
           <Event
             key={index}
+            id={item.id}
             img={item.img}
             title={item.name}
             price={item.price}
             numParticipant={item.nbParticipants}
             numTickets={item.nbTickets}
             buy={buy}
+            onDelete={onDelete}
           />
         ))}
       </div>
